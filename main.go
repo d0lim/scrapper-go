@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/imdigo/scrapper-go/accounts"
+)
 
 func main() {
-	fmt.Println("Hello World!")
+	account := accounts.NewAccount("dolim")
+	fmt.Println(account)
 }
