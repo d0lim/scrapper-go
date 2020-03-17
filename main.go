@@ -62,6 +62,7 @@ func writeJobs(jobs []extractedJob) {
 func getPage(page int) []extractedJob {
 	var jobs []extractedJob
 	c := make(chan extractedJob)
+	defer close(c)
 	pageURL := baseURL + "&start=" + strconv.Itoa(page*50)
 	fmt.Println("Requesting:", pageURL)
 	res, err := http.Get(pageURL)
