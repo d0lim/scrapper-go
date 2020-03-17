@@ -7,11 +7,18 @@ import (
 )
 
 func main() {
-	dictionary := mydict.Dictionary{"first": "First word"}
-	definition, err := dictionary.Search("second")
+	dictionary := mydict.Dictionary{}
+	err := dictionary.Add("hello", "Greeting")
 	if err != nil {
 		fmt.Println(err)
-	} else {
-		fmt.Println(definition)
+	}
+	definition, err := dictionary.Search("hello")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("found", "hello", "definition:", definition)
+	err2 := dictionary.Add("hello", "Greeting")
+	if err2 != nil {
+		fmt.Println(err2)
 	}
 }
