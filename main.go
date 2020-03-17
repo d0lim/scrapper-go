@@ -8,17 +8,19 @@ import (
 
 func main() {
 	dictionary := mydict.Dictionary{}
-	err := dictionary.Add("hello", "Greeting")
+	baseWord := "hello"
+	dictionary.Add(baseWord, "First word")
+	def, err := dictionary.Search(baseWord)
 	if err != nil {
 		fmt.Println(err)
 	}
-	definition, err := dictionary.Search("hello")
+	fmt.Println(def)
+	err = dictionary.Delete(baseWord)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("found", "hello", "definition:", definition)
-	err2 := dictionary.Add("hello", "Greeting")
-	if err2 != nil {
-		fmt.Println(err2)
+	def, err = dictionary.Search(baseWord)
+	if err != nil {
+		fmt.Println(err)
 	}
 }
