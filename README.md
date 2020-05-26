@@ -11,3 +11,6 @@ The scrapper built with Go
 ## Advantages compared to Python scrapper
 
 This scrapper is built with Go and goroutine so it serve super fast scrapping.
+
+## Limitation
+It doesn't support Korean(Hangul) input. Searching word must be English.
