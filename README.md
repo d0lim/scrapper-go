@@ -1,6 +1,6 @@
 # scrapper-go
 
-The scrapper built with Go
+The scrapper built with Go and echo
 
 ## Quick Start
 
